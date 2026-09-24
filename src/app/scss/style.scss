@@ -1,0 +1,115 @@
+@use "sass:color";
+
+// Змінні...
+$primary-color: #4a90e2;
+$secondary-color: #2c3e50;
+$accent-color: #2ecc71;
+$bg-color: #f4f7f6;
+$font-stack: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+// Базові стилі
+body {
+  font-family: $font-stack;
+  background-color: $bg-color;
+  color: $secondary-color;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+// Шапка
+.main-header {
+  background-color: $secondary-color;
+  color: #fff;
+  padding: 15px 0;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    margin: 0;
+    font-size: 24px;
+  }
+
+  .nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+
+    a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s;
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+}
+
+// Layout
+.main-content {
+  display: flex;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.sidebar {
+  flex: 1;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+  .badge {
+    background: #e74c3c;
+    color: #fff;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+
+    &.active {
+      background: $accent-color;
+    }
+  }
+
+  .btn {
+    margin-top: 15px;
+    background: $primary-color;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+
+    &:hover {
+      background: color.adjust($primary-color, $lightness: -10%);    }
+  }
+}
+
+.content {
+  flex: 3;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+  .image-box img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-top: 15px;
+  }
+}
