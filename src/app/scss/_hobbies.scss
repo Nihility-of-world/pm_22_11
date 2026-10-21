@@ -1,0 +1,26 @@
+@use "variables" as *;
+@use "mixins" as *;
+@use "placeholders";
+
+.hobbies {
+  .section-title {
+    @extend %section-title;
+    @include section-heading;
+  }
+
+  &__list {
+    margin: 0;
+
+    li {
+      @include small-copy;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+      text-transform: uppercase;
+
+      &::before {
+        content: "•";
+        margin-right: 0.3rem;
+      }
+    }
+  }
+}

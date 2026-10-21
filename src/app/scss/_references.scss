@@ -1,0 +1,32 @@
+@use "variables" as *;
+@use "mixins" as *;
+@use "placeholders";
+
+.references {
+  .section-title {
+    @extend %section-title;
+    @include section-heading($color-paper);
+  }
+
+  &__item {
+    margin-bottom: 0.8rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    h3 {
+      font-size: 0.72rem;
+      font-weight: 800;
+      margin: 0 0 0.15rem;
+      text-transform: uppercase;
+    }
+
+    p {
+      @include small-copy;
+      color: $color-sidebar-muted;
+      font-size: 0.65rem;
+      margin: 0.08rem 0;
+    }
+  }
+}

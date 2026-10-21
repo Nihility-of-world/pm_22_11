@@ -1,0 +1,60 @@
+@use "variables" as *;
+@use "mixins" as *;
+@use "placeholders";
+
+.experience {
+  margin-bottom: 2rem;
+
+  .section-title {
+    @extend %section-title;
+    @include section-heading;
+    margin-bottom: 0.85rem;
+  }
+}
+
+.job {
+  margin-bottom: 0.9rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &__heading {
+    align-items: flex-start;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: space-between;
+  }
+
+  h3 {
+    font-size: 0.78rem;
+    font-weight: 800;
+    margin: 0;
+    text-transform: uppercase;
+  }
+
+  &__company {
+    font-size: 0.72rem;
+    font-style: italic;
+    margin: 0.1rem 0 0;
+  }
+
+  &__date {
+    flex: 0 0 auto;
+    font-size: 0.7rem;
+    margin: 0;
+    white-space: nowrap;
+  }
+
+  &__description {
+    @include small-copy;
+    color: $color-muted;
+    margin: 0.45rem 0 0;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .job__heading {
+    flex-wrap: wrap;
+  }
+}

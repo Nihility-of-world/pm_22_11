@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Noel Taylor's graphic and web designer résumé.">
+    <title>Noel Taylor — Graphic &amp; Web Designer</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.min.css">
+  </head>
+  <body>
+    <main class="resume container-fluid">
+      <div class="resume__frame">
+        <div class="resume-intro row g-0">
+          <div class="resume-intro__about col-md-7">
+            @@include('components/_about.html')
+          </div>
+          <div class="resume-intro__identity col-md-5">
+            @@include('components/_header.html')
+          </div>
+        </div>
+
+        <div class="resume-lower">
+          <div class="resume-main">
+            @@include('components/_experience.html')
+            @@include('components/_skills.html')
+            <div class="row g-0 resume-main__details">
+              <div class="col-sm-6">
+                @@include('components/_languages.html')
+              </div>
+              <div class="col-sm-6">
+                @@include('components/_hobbies.html')
+              </div>
+            </div>
+          </div>
+
+          <aside class="resume-sidebar" aria-label="Contact, education and references">
+            <div class="profile-photo">
+              <img src="imgs/noel-taylor.jpg" alt="Noel Taylor">
+            </div>
+            @@include('components/_contact.html')
+            @@include('components/_education.html')
+            @@include('components/_references.html')
+          </aside>
+          <div class="resume-blank" aria-hidden="true"></div>
+        </div>
+      </div>
+    </main>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

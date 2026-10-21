@@ -7,7 +7,7 @@ const browserSync = require('browser-sync').create();
 const concat = require('gulp-concat');
 
 function htmlTask() {
-  return src('src/app/**/*.html')
+  return src('src/app/index.html')
     .pipe(fileInclude({
       prefix: '@@',
       basepath: '@file'
@@ -17,10 +17,23 @@ function htmlTask() {
 }
 
 function scssTask() {
-  return src('src/app/scss/*.scss')
+  return src('src/app/scss/main.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(cssnano())
+    .pipe(concat('index.min.css'))
     .pipe(dest('dist/css'))
+    .pipe(browserSync.stream());
+}
+
+function bootstrapCssTask() {
+  return src('node_modules/bootstrap/dist/css/bootstrap.min.css')
+    .pipe(dest('dist/css'))
+    .pipe(browserSync.stream());
+}
+
+function bootstrapJsTask() {
+  return src('node_modules/bootstrap/dist/js/bootstrap.bundle.min.js')
+    .pipe(dest('dist/js'))
     .pipe(browserSync.stream());
 }
 
@@ -60,10 +73,12 @@ function watchTask() {
 
 exports.html = htmlTask;
 exports.scss = scssTask;
+exports.bootstrapCss = bootstrapCssTask;
+exports.bootstrapJs = bootstrapJsTask;
 exports.js = jsTask;
 exports.images = imagesTask;
 
 exports.default = series(
-  parallel(htmlTask, scssTask, jsTask, imagesTask),
+  parallel(htmlTask, scssTask, bootstrapCssTask, bootstrapJsTask, jsTask, imagesTask),
   parallel(serverTask, watchTask)
 );

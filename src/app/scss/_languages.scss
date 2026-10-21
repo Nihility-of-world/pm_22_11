@@ -1,0 +1,28 @@
+@use "variables" as *;
+@use "mixins" as *;
+@use "placeholders";
+
+.languages {
+  .section-title {
+    @extend %section-title;
+    @include section-heading;
+  }
+
+  &__list {
+    display: grid;
+    gap: 0.25rem 0.5rem;
+    grid-template-columns: repeat(2, max-content);
+    margin: 0;
+
+    li {
+      @include small-copy;
+      font-weight: 700;
+      text-transform: uppercase;
+
+      &::before {
+        content: "•";
+        margin-right: 0.25rem;
+      }
+    }
+  }
+}

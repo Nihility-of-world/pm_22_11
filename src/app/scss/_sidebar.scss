@@ -1,0 +1,42 @@
+@use "variables" as *;
+
+.resume-sidebar {
+  background: $color-sidebar;
+  color: $color-paper;
+  padding: 0 1.45rem 2rem;
+}
+
+.resume-blank {
+  background: $color-paper;
+}
+
+.profile-photo {
+  border: 0.45rem solid $color-paper;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0.35rem $color-ink;
+  height: 13rem;
+  left: 50%;
+  margin: -6.3rem 0 2.4rem;
+  position: relative;
+  transform: translateX(-50%);
+  width: 13rem;
+
+  img {
+    border-radius: 50%;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .profile-photo {
+    height: 12rem;
+    margin-top: -1rem;
+    width: 12rem;
+  }
+
+  .resume-blank {
+    display: none;
+  }
+}

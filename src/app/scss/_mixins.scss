@@ -1,0 +1,16 @@
+@use "variables" as *;
+
+@mixin section-heading($color: $color-ink) {
+  color: $color;
+  font-family: $font-heading;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  margin: 0 0 $space-unit * 4;
+  text-transform: uppercase;
+}
+
+@mixin small-copy {
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
