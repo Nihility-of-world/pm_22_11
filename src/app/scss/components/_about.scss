@@ -1,0 +1,17 @@
+@use "../base/variables" as *;
+@use "../base/mixins" as *;
+@use "../base/placeholders";
+
+.about {
+  .section-title {
+    @extend %section-heading-base;
+    @include section-heading;
+  }
+
+  p {
+    @include small-copy;
+    color: $color-text;
+    margin: 0;
+    text-align: justify;
+  }
+}

@@ -1,0 +1,23 @@
+@use "variables" as *;
+
+@mixin section-title {
+  align-items: center;
+  display: flex;
+  font-size: 1.05rem;
+  font-weight: 700;
+  gap: 0.55rem;
+  line-height: 1.25;
+  margin: 0 0 0.85rem;
+  text-transform: uppercase;
+}
+
+@mixin section-heading($color: $color-text) {
+  color: $color;
+  font-family: $font-heading;
+  letter-spacing: 0;
+}
+
+@mixin small-copy {
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
