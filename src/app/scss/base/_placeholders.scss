@@ -1,0 +1,8 @@
+@use "variables" as *;
+
+%section-heading-base {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 0 0 $space-unit * 4;
+  text-transform: uppercase;
+}

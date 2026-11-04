@@ -1,0 +1,44 @@
+@use "../base/variables" as *;
+
+.resume {
+  margin: $space-unit * 8 auto;
+  max-width: $content-width;
+  padding: 0;
+
+  &__frame {
+    background: $color-background;
+    border: 0.55rem solid $color-text;
+    border-radius: 2.5rem;
+    box-shadow: 0 1.25rem 2.5rem rgba(51, 51, 51, 0.2);
+    overflow: hidden;
+  }
+}
+
+.resume-intro {
+  background: $color-intro;
+  min-height: 15.5rem;
+
+  &__about {
+    padding: 2.5rem 2rem 2rem 2.75rem;
+  }
+
+  &__identity {
+    padding: 2.5rem 1.5rem;
+  }
+}
+
+.resume-main {
+  padding: 2.6rem 2rem 2.2rem 2.75rem;
+
+  &__details {
+    margin-top: 2.2rem;
+  }
+}
+
+.sidebar-section {
+  margin-bottom: 1.7rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

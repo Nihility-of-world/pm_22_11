@@ -1,0 +1,16 @@
+@use "../base/variables" as *;
+
+$main-column-width: 62%;
+$sidebar-column-width: 32%;
+$blank-column-width: 100% - $main-column-width - $sidebar-column-width;
+
+.resume-lower {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+@media (min-width: 768px) {
+  .resume-lower {
+    grid-template-columns: $main-column-width $sidebar-column-width $blank-column-width;
+  }
+}
